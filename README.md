@@ -110,7 +110,7 @@ npm install
 # JWT Secret: your-super-secret-jwt-key-change-this-in-production-2024
 
 # Start backend server
-npm run dev
+pnpm run dev
 ```
 
 Backend will run on `http://localhost:5000`
@@ -122,13 +122,13 @@ Backend will run on `http://localhost:5000`
 cd ..
 
 # Install dependencies
-npm install
+pnpm install
 
 # Environment variables are in `.env` (Next.js root)
 # Backend API URL: http://localhost:5000
 
 # Start frontend development server
-npm run dev
+pnpm run dev
 ```
 
 Frontend will run on `http://localhost:3000`
@@ -203,23 +203,7 @@ curl -X POST http://localhost:5000/api/history \
   -d '{"gas":250,"temp":28.4,"humidity":61,"fanStatus":false,"buzzerStatus":false}'
 ```
 
-## 🔧 Configuration
 
-### Backend Environment Variables (`backend/.env`)
-```env
-MONGODB_URI=mongodb+srv://yaredabebe0101_db_user:PbcHcZCCud2Ek0z2@cluster0.4xuikk3.mongodb.net/smart-lab-monitoring
-JWT_SECRET=your-super-secret-jwt-key-change-this-in-production-2024
-PORT=5000
-NODE_ENV=development
-FRONTEND_URL=http://localhost:3000
-```
-
-### Frontend Environment Variables (`.env`)
-```env
-NEXT_PUBLIC_API_URL=http://localhost:5000
-NEXT_PUBLIC_APP_NAME=Smart Lab Monitoring
-NEXT_PUBLIC_ENABLE_DEMO_MODE=true
-NEXT_PUBLIC_ENABLE_WEBSERIAL=true
 ```
 
 ## 🛠 Development
@@ -275,24 +259,7 @@ npm start            # Start production server
 - Edge 89+ (WebSerial API)
 - Safari/Firefox: Demo mode only (no WebSerial)
 
-## 🎨 Tech Stack
 
-### Frontend
-- Next.js 15 (App Router)
-- React 18
-- TypeScript
-- Tailwind CSS
-- Shadcn/UI Components
-- Recharts (data visualization)
-- WebSerial API
-
-### Backend
-- Node.js
-- Express.js
-- MongoDB + Mongoose
-- JWT (jsonwebtoken)
-- bcryptjs
-- CORS
 
 ### Hardware
 - Arduino Uno/Nano

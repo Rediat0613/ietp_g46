@@ -7,17 +7,11 @@ Backend API for Smart Environment Monitoring System with role-based authenticati
 ### 1. Install Dependencies
 ```bash
 cd backend
-npm install
+pnpm install
 ```
 
 ### 2. Environment Setup
-The `.env` file is already configured with MongoDB credentials:
-```env
-MONGODB_URI=your-mongo-url
-JWT_SECRET=your-super-secret-jwt-key-change-this-in-production-2024
-PORT=5000
-NODE_ENV=development
-FRONTEND_URL=http://localhost:3000
+
 ```
 
 ### 3. Start Server
@@ -80,62 +74,6 @@ Device flow notes:
 2. Include token in requests: `Authorization: Bearer <token>`
 3. Token expires in 30 days
 
-## 📊 MongoDB Collections
-
-### Users
-```javascript
-{
-  name: String,
-  email: String (unique),
-  password: String (hashed),
-  role: 'viewer' | 'technician' | 'admin',
-  createdAt: Date,
-  lastLogin: Date
-}
-```
-
-### SensorHistory
-```javascript
-{
-  userId: ObjectId,
-  gas: Number,
-  temp: Number,
-  humidity: Number,
-  fanStatus: Boolean,
-  buzzerStatus: Boolean,
-  timestamp: Date,
-  deviceId: String
-}
-```
-
-### Settings
-```javascript
-{
-  userId: ObjectId,
-  thresholds: {
-    gas: Number (default: 300),
-    temperature: Number (default: 30),
-    humidityMin: Number (default: 40),
-    humidityMax: Number (default: 70)
-  },
-  alertDuration: Number (default: 5),
-  fanMinOnTime: Number (default: 1)
-}
-```
-
-### Alerts
-```javascript
-{
-  userId: ObjectId,
-  type: 'gas' | 'temperature' | 'humidity',
-  severity: 'low' | 'medium' | 'high' | 'critical',
-  message: String,
-  value: Number,
-  threshold: Number,
-  resolved: Boolean,
-  timestamp: Date
-}
-```
 
 ## 🧪 Testing API
 
